@@ -8,7 +8,6 @@ import {
   NavbarItem,
 } from "@heroui/navbar";
 
-
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/header/theme-switch";
 import {
@@ -17,6 +16,7 @@ import {
   SearchIcon,
 } from "@/components/header/icons";
 import { useNavigate } from "react-router-dom";
+import AddCarForm from "../addCarForm/AddCarForm";
 
 export const Navbar = () => {
   const searchInput = (
@@ -39,10 +39,14 @@ export const Navbar = () => {
       type="search"
     />
   );
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
+
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky " className=" shadow-lg shadow-LightGrayBlue">
+    <HeroUINavbar
+      maxWidth="xl"
+      position="sticky "
+      className=" shadow-lg shadow-LightGrayBlue"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <div
@@ -72,6 +76,7 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
+        <NavbarItem><AddCarForm/></NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
       </NavbarContent>
     </HeroUINavbar>

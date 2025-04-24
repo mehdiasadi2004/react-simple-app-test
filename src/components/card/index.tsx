@@ -21,11 +21,8 @@ const Card = ({ name, title, img, id }: CardProps) => {
         <img className="h-full w-full object-cover " src={img} />
       </div>
       <div className="py-[2px] px-2 flex flex-col gap-y-[2px]">
-        <span className="text-lg font-bold">Ferrari SF90</span>
-        <p className="text-sm text-BoxBg  ">
-          Kalmar Automotive's Porsche 911 was introduced at a price of 2 million
-          dollars
-        </p>
+        <span className="text-lg font-bold">{name}</span>
+        <p className="text-sm text-BoxBg  ">{title}</p>
       </div>
     </div>
   );
