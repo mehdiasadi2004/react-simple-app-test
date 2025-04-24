@@ -1,17 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { CarsDto } from "./type";
-import Http from "../../interceptor/index.interceptor";
-
-
-
 
 const getAllCars = async (): Promise<AxiosResponse> => {
-  const data: AxiosResponse<CarsDto> = await Http.get("/brand/cars");
+  const data: AxiosResponse<CarsDto> = await axios.get(
+    "https://66e3fba7d2405277ed128b1e.mockapi.io/api/brand/cars"
+  );
   return data; // فقط data را برگردانید
 };
 
-// هوک برای گرفتن داده موردنیاز از API
 export const useGetAllCars = (): {
   data: AxiosResponse | undefined;
   isLoading: boolean;

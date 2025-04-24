@@ -4,7 +4,7 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 import { getItem } from "../common/storage.service";
 const baseURL = import.meta.env.VITE_BASE_URL;

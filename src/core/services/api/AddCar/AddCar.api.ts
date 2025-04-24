@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import Http from "../../interceptor/index.interceptor";
-import { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +17,10 @@ export const AddCar = async (
   params: IAddCarParams
 ): Promise<AxiosResponse | void> => {
   try {
-    const response: AxiosResponse = await Http.post(`/brand/cars`, params);
+    const response: AxiosResponse = await axios.post(
+      `https://66e3fba7d2405277ed128b1e.mockapi.io/api/brand/cars`,
+      params
+    );
     return response;
   } catch (error) {
     console.error(error);
