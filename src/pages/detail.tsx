@@ -26,7 +26,11 @@ const delCar = useDelCar();
     data && (
       <div className="flex flex-col items-center justify-center min-h-screen py-4 px-80">
         <div className="flex flex-col items-center relative h-full w-full min-h-[200px] rounded-xl overflow-hidden">
-          <img src={data.data.image} alt={data.data.name} className="w-full" />
+          <img
+            src={`/public/${data.data.image}`}
+            alt={data.data.name}
+            className="w-full"
+          />
           <div className="absolute w-full bottom-0 left-0 text-BoxBg bg-gradient-to-t bg-MainBg opacity-50 px-10 py-4 shadow-[0px_-15px_45px_40px_rgba(0,0,0,0.9)]">
             <h1 className="text-2xl font-bold">{data.data.name}</h1>
             <p className="mt-4">{data.data.titel}</p>
@@ -155,10 +159,7 @@ const delCar = useDelCar();
             amet!
           </p>
         </div>
-        <Button
-          onPress={deleteCar}
-          color="danger"
-        >
+        <Button onPress={deleteCar} color="danger">
           Delete
         </Button>
       </div>
