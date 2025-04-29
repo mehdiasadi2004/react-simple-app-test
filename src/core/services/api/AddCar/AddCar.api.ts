@@ -6,21 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 interface IAddCarParams {
   name: any;
-  titel: any;
+  title: any;
   desc: any;
   image: string | undefined;
-  date: string;
-  id: string;
 }
 
 export const AddCar = async (
   params: IAddCarParams
 ): Promise<AxiosResponse | void> => {
   try {
-    const response: AxiosResponse = await axios.post(
-      `https://66e3fba7d2405277ed128b1e.mockapi.io/api/brand/cars`,
-      params
-    );
+    const response: AxiosResponse = await Http.post(`/cars`, params);
     return response;
   } catch (error) {
     console.error(error);

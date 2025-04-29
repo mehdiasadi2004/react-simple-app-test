@@ -5,10 +5,10 @@ import { Input } from "@heroui/input";
 import { useEffect, useMemo, useState } from "react";
 
 interface ICar {
-  id: string;
+  _id: string;
   name: string;
   image: string;
-  titel: string;
+  title: string;
   desc: string;
   date:string;
 }
@@ -47,9 +47,9 @@ if (isError) return <div>Error...</div>;
       </div>
       {newData?.map((item: ICar) => (
         <Card
-          key={item.id}
-          id={item.id}
-          title={item.titel}
+          key={item._id}
+          _id={item._id}
+          title={item.title}
           name={item.name}
           img={item.image}
         />

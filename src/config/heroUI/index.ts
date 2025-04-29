@@ -37,7 +37,7 @@ const heroUiConfig = {
         DarkBlue: "#ECEDEE",
         SunshineYellow: "#FFC224",
         LightGray: "#00000033",
-        LightGrayBlue: "#333",
+        LightGrayBlue: "#111",
         LawSection: "#222222",
         DarkIndigo: "#1E1C4A",
         LightGrayish: "#434343",

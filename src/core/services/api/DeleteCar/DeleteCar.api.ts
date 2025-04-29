@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 // تابع حذف
 export const delCar = async (id: string | undefined): Promise<AxiosResponse | void> => {
   try {
-    const response: AxiosResponse = await axios.delete(
-      `https://66e3fba7d2405277ed128b1e.mockapi.io/api/brand/cars/${id}`
-    );
+    const response: AxiosResponse = await Http.delete(`/cars/${id}`);
     return response;
   } catch (error) {
     console.error(error);

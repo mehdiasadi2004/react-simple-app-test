@@ -26,15 +26,14 @@ const AddCarForm = () => {
 
   const handleSubmit = (values: any) => {
     console.log("Form Values:", values);
-    console.log("Photo File:", photo);
+    console.log("Photo File:", photo?.name);
+
 
     const data = {
       name: values.Name,
-      titel: values.Title,
+      title: values.Title,
       desc: values.Description,
       image: photo?.name,
-      date: todayDate,
-      id: Math.floor(Math.random() * 1000).toString(),
     };
     addCar.mutate(data);
 onClose()

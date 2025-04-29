@@ -5,15 +5,15 @@ export interface CardProps {
   name: string;
   title: string;
   img: string;
-  id: string;
+  _id: string;
 }
 
-const Card = ({ name, title, img, id }: CardProps) => {
+const Card = ({ name, title, img, _id }: CardProps) => {
   const navigate = useNavigate();
   return (
     <div
       onClick={() => {
-        navigate("/detail/" + id);
+        navigate("/detail/" + _id);
       }}
       className="bg-LightGrayBlue h-[250px] w-[400px] rounded-lg hover:scale-110 hover:shadow-[0px_1px_18px_5px_rgb(0,216,245)]  transition-all duration-300 overflow-hidden cursor-pointer"
     >

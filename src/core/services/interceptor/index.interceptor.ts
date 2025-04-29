@@ -49,11 +49,6 @@ instance.interceptors.request.use(
   async (
     config: InternalAxiosRequestConfig<any>
   ): Promise<InternalAxiosRequestConfig> => {
-    if (config.headers) {
-      const token = getItem("token");
-
-      if (token) config.headers.Authorization = "Bearer " + token;
-    }
     return config;
   }
 );
