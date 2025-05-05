@@ -4,7 +4,7 @@ import { CarsDto } from "./type";
 import Http from "../../interceptor/index.interceptor";
 
 const getAllCars = async (): Promise<AxiosResponse> => {
-  const data: AxiosResponse<CarsDto> = await Http.get("/cars");
+  const data: AxiosResponse<CarsDto> = await Http.get("/Car");
   console.log(data)
   return data; // فقط data را برگردانید
 };

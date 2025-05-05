@@ -1,5 +1,6 @@
 import { useCarDetail } from "@/core/services/api/CarDetail/getCarDetail.api";
 import { useDelCar } from "@/core/services/api/DeleteCar/DeleteCar.api";
+import { formatDateOnly } from "@/core/utils/today";
 import { Button } from "@heroui/button";
 
 import { useParams } from "react-router-dom";
@@ -34,7 +35,7 @@ const delCar = useDelCar();
           <div className="absolute w-full bottom-0 left-0 text-BoxBg bg-gradient-to-t bg-MainBg opacity-50 px-10 py-4 shadow-[0px_-15px_45px_40px_rgba(0,0,0,0.9)]">
             <h1 className="text-2xl font-bold">{data.data.name}</h1>
             <p className="mt-4">{data.data.title}</p>
-            <p className="mt-4">Date: {data.data.date}</p>
+            <p className="mt-4">Date: {formatDateOnly(data.data.date)}</p>
           </div>
         </div>
         <div>
