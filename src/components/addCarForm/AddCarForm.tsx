@@ -10,9 +10,7 @@ import {
 } from "@heroui/react";
 import { Field } from "../Field/Field";
 import { useAddCar } from "@/core/services/api/AddCar/AddCar.api";
-import { todayDate } from "@/core/utils/today";
 
-// ✅ اسکیمای اعتبارسنجی
 const validationSchema = Yup.object({
   Name: Yup.string().required("Name is required"),
   Title: Yup.string().required("Title is required"),
@@ -30,10 +28,9 @@ const AddCarForm = () => {
 
 
     const data = {
-      id: "",
       name: values.Name,
       title: values.Title,
-      desc: values.Description,
+      description: values.Description,
       image: photo?.name,
     };
     addCar.mutate(data);

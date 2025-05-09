@@ -41,7 +41,7 @@ const delCar = useDelCar();
         <div>
           <h1 className="text-2xl font-bold mt-4">Details</h1>
           <p className="mt-4">
-            {data.data.desc}
+            {data.data.description}
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias
             officia nam ratione totam blanditiis dolorum, maiores doloremque
             officiis eius dolores doloribus tenetur nemo nobis placeat sit animi

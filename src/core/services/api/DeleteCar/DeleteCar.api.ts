@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // تابع حذف
 export const delCar = async (id: string | undefined): Promise<AxiosResponse | void> => {
   try {
-    const response: AxiosResponse = await Http.delete(`/Car/${id}`);
+    const response: AxiosResponse = await Http.delete(`/posts/${id}`);
     return response;
   } catch (error) {
     console.error(error);

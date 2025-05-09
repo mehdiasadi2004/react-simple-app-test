@@ -5,10 +5,9 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 interface IAddCarParams {
-  id:string
-  name: any;
-  title: any;
-  desc: any;
+  name: string;
+  title: string;
+  description: string;
   image: string | undefined;
 }
 
@@ -16,7 +15,8 @@ export const AddCar = async (
   params: IAddCarParams
 ): Promise<AxiosResponse | void> => {
   try {
-    const response: AxiosResponse = await Http.post(`/Car`, params);
+    console.log(params);
+    const response: AxiosResponse = await Http.post(`/posts`, params);
     return response;
   } catch (error) {
     console.error(error);

@@ -41,7 +41,7 @@ instance.interceptors.response.use(
     return response;
   },
   (error) => {
-    console.log(error.response);
+    console.log(error);
   }
 );
 

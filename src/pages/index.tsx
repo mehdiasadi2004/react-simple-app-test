@@ -1,16 +1,17 @@
 
 import Card from "@/components/card";
+import { SearchIcon } from "@/components/header/icons";
 import { useGetAllCars } from "@/core/services/api/getAllCars/getAllCars.api";
 import { Input } from "@heroui/input";
-import { useEffect, useMemo, useState } from "react";
+import {  useMemo, useState } from "react";
 
 interface ICar {
   id: string;
   name: string;
   image: string;
   title: string;
-  desc: string;
-  date:string;
+  description: string;
+  date: string;
 }
 
 export default function IndexPage() {
@@ -23,9 +24,9 @@ const[searchParams,setSearchParams]=useState("")
 console.log(data)
 const newData = useMemo(() => {
 
-  if (!data?.data.result) return [];
+  if (!data?.data) return [];
 
-   return data.data.result.filter((item: any) =>
+   return data.data.filter((item: any) =>
      item.name.toUpperCase().includes(searchParams.toUpperCase())
    );
 
@@ -39,13 +40,12 @@ if (isError) return <div>Error...</div>;
   return (
     <div className="py-20 flex flex-wrap gap-20 justify-center">
       <div className="h-10 w-full flex justify-center">
-        <div className="w-[20%]">
           <Input
+          className="w-[20%]"
             onChange={(e) => {
               setSearchParams(e.target.value);
             }}
           />
-        </div>
       </div>
       {newData?.map((item: ICar) => (
         <Card
